@@ -1,3 +1,3 @@
 direccion = jdbc:mysql://localhost/
-usuario = logger
-contrasenya = H"e1y#|xa99-
+usuario = 
+contrasenya = 
