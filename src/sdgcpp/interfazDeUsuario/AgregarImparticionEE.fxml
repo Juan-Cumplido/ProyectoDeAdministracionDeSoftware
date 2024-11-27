@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcpp.controladores.AgregarEEControlador">
+      <children>
+      <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/fondo-blanco2.jpg" />
+         </image>
+      </ImageView>
+          
+            <Pane layoutX="-37.0" prefHeight="458.0" prefWidth="736.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="-37.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="0.0">
+               <children>
+                               <TextField fx:id="textField_Correo" layoutX="200.0" layoutY="66.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-radius: 13;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <Button fx:id="button_Buscar" layoutX="448.0" layoutY="67.0" mnemonicParsing="false" onAction="#button_Buscar" prefHeight="23.0" prefWidth="61.0" style="-fx-background-color: #a3c8d7;" text="Agregar">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+                   <TextField fx:id="textField_ProgramaEducativo" accessibleText="pe" layoutX="197.0" layoutY="121.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-radius: 13;" />
+                  
+                  <TextField fx:id="textField_EE"   layoutX="198.0" layoutY="176.0" prefHeight="25.0" prefWidth="237.0" style="-fx-background-radius: 13;" />
+                  <Label accessibleText="labelTema" alignment="CENTER" layoutX="60.0" layoutY="183.0" style="&#10;" text="Experiencia educativa:" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label accessibleText="labelInstruccion" alignment="CENTER" layoutX="65.0" layoutY="126.0" style="&#10;" text="Programa educativo:" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="148.0" layoutY="249.0" text="Bloque:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_Bloque"  layoutX="200.0" layoutY="245.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-radius: 13;" />
+                  <Label layoutX="339.0" layoutY="249.0" text="Sección:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_Sesion"  layoutX="391.0" layoutY="245.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-radius: 13;" />
+                  <Label layoutX="141.0" layoutY="284.0" text="Créditos:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_Creditos"  layoutX="201.0" layoutY="280.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-radius: 13;" />
+                  <Label layoutX="348.0" layoutY="284.0" text="Horas:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_Horas" layoutX="392.0" layoutY="280.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-radius: 13;" />
+                  <Label layoutX="141.0" layoutY="319.0" text="Semanas:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_Semanas" layoutX="202.0" layoutY="315.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-radius: 13;" />
+                  <Label layoutX="347.0" layoutY="319.0" text="Meses:">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_Meses"   layoutX="393.0" layoutY="315.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-radius: 13;" />
+            <Label fx:id="label_CorreoAcademico" layoutX="54.0" layoutY="71.0" text="Correo del académico:" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+
+            <TableView fx:id="tableView_Profesores" layoutX="477.0" layoutY="121.0" prefHeight="90.0" prefWidth="221.0">
+               <columns>
+                  <TableColumn fx:id="column_Profesor" prefWidth="185.0" text="Profesor" />
+                  <TableColumn fx:id="column_Quitar" prefWidth="64.0" />
+               </columns>
+            </TableView>
+            <Label fx:id="label_Periodo" layoutX="142.0" layoutY="371.0" text="Periodo:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBox_Periodo" layoutX="198.0" layoutY="367.0" prefHeight="25.0" prefWidth="304.0" promptText="Seleccione periodo" />
+            <Button fx:id="button_Guardar" layoutX="276.0" layoutY="434.0" mnemonicParsing="false" onAction="#guardarRegistro" style="-fx-background-color: #a3c8d7;" text="Guardar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="button_Cancelar" layoutX="454.0" layoutY="434.0" mnemonicParsing="false" onAction="#button_Regresar" style="-fx-background-color: #d9d9d9;" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+               </children>
+            </Pane>
+            <TitledPane animated="false" collapsible="false" prefHeight="30.0" prefWidth="700.0" text="                                                                       Impartición EE                                   " wrapText="true">
+               <font>
+                  <Font name="Ebrima Bold" size="15.0" />
+               </font></TitledPane>
+      <ImageView fitHeight="78.0" fitWidth="109.0" layoutX="596.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/logo2.jpg" />
+         </image>
+      </ImageView>
+      </children>
+    </AnchorPane>

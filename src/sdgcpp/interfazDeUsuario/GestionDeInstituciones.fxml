@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcoilvic.controladores.GestionDeInstitucionesControlador">
+   <children>
+      <ImageView fx:id="imageView_SubMenu" fitHeight="707.0" fitWidth="1256.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/SubMenu.png" />
+         </image>
+      </ImageView>
+      <Pane id="pane_Principal" layoutX="159.0" layoutY="44.0" prefHeight="638.0" prefWidth="961.0">
+         <children>
+             <TextField fx:id="textField_BuscarInstitucion" layoutX="102.0" layoutY="54.0" prefHeight="25.0" prefWidth="316.0" promptText="Buscar institución" style="-fx-background-radius: 13;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="button_Buscar" layoutX="438.0" layoutY="56.0" mnemonicParsing="false" onAction="#button_Buscar" style="-fx-background-color: #04c9fa;" text="Buscar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ComboBox fx:id="comboBox_Pais" layoutX="182.0" layoutY="102.0" onAction="#comboPaisSeleccionado" prefWidth="150.0" promptText="País">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Button fx:id="button_RegistrarInstitucion" layoutX="506.0" layoutY="562.0" mnemonicParsing="false" onAction="#button_RegistrarInstitucion" style="-fx-background-color: #04c9fa;" text="Registrar institución" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="button_Regresar" layoutX="265.0" layoutY="561.0" mnemonicParsing="false" onAction="#button_Regresar" style="-fx-background-color: #f03c02;" text="Regresar" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="label_Nombre" layoutX="26.0" layoutY="56.0" text="Nombre:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabla_Instituciones" layoutX="21.0" layoutY="154.0" prefHeight="370.0" prefWidth="927.0" style="-fx-border-color: #c4ced7;">
+               <columns>
+                  <TableColumn fx:id="column_Clave" prefWidth="153.0" text="Clave" />
+                  <TableColumn fx:id="column_NombreInstitucion" minWidth="0.0" prefWidth="254.5" text="Nombre de Institución" />
+                  <TableColumn fx:id="column_Pais" minWidth="0.0" prefWidth="129.0" text="País" />
+                  <TableColumn fx:id="column_Correo" minWidth="0.0" prefWidth="262.5" text="Correo" />
+                  <TableColumn fx:id="column_Modificar" prefWidth="126.0" text="Modificar" />
+               </columns>
+            </TableView>
+            <Label fx:id="label_Filtrar" layoutX="26.0" layoutY="102.0" text="Filtra tu búsqueda:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageView_noHayInstituciones" fitHeight="193.0" fitWidth="255.0" layoutX="378.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/noHayInstituciones.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="label_Universidad" layoutX="968.0" layoutY="34.0" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_SDGCOILVIC" layoutX="21.0" layoutY="37.0" text="SDGCOILVIC" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_GestionInstituciones" layoutX="467.0" layoutY="12.0" text="Gestión de Instituciones" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

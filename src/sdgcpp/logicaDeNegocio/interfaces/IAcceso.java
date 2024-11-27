@@ -6,7 +6,6 @@ import sdgcpp.logicaDeNegocio.clases.Acceso;
 import sdgcpp.logicaDeNegocio.clases.Profesor;
 
 public interface IAcceso {
-   public void ejecutarActualizacionBaseDatos() throws SQLException;
    public int agregarAcceso (Acceso acceso)throws SQLException ;
    public int verificarExistenciaAcceso(String usuario, String contrasenia)throws SQLException ; 
    public String obtenerTipoUsuario(String usuario, String contrasenia)throws SQLException ; 

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcpp.controladores.AgregarTRControlador">
+   <children>
+      <!-- Fondo de la ventana -->
+      <ImageView fx:id="imageView_Fondo" fitHeight="543.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/fondo-blanco2.jpg" />
+         </image>
+      </ImageView>
+      
+      <!-- Título de la ventana -->
+      <TitledPane fx:id="titledPane_Titulo" animated="false" collapsible="false" prefHeight="30.0" prefWidth="750.0" text="                                                                                  Jurado" wrapText="true">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+      </TitledPane>
+      
+      <!-- Panel izquierdo con los campos -->
+      <Pane fx:id="pane_Informacion" layoutX="-33.0" layoutY="-7.0" prefHeight="548.0" prefWidth="563.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="-33.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="-7.0">
+         <children>
+            <!-- Correo del académico -->
+            <Label fx:id="label_CorreoAcademico" layoutX="64.0" layoutY="60.0" text="Correo del académico:" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_Correo" layoutX="203.0" layoutY="55.0" prefHeight="25.0" prefWidth="191.0" style="-fx-background-radius: 13;" />
+            <Label alignment="CENTER" layoutX="433.0" layoutY="60.0" style="&#10;" text="Rol:" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+            </Label>
+ 
+            <Label layoutX="252.0" layoutY="121.0" text="Trabajo recepcional">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>     
+            <!-- Licenciatura -->
+            <Label fx:id="label_Licenciatura" alignment="CENTER" layoutX="116.0" layoutY="177.0" text="Licenciatura:" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+
+            <!-- Matrícula del estudiante -->
+            <Label fx:id="label_MatriculaEstudiante" layoutX="69.0" layoutY="212.0" text="Matrícula estudiante:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_MatriculaEstudiante" layoutX="200.0" layoutY="208.0" prefHeight="25.0" prefWidth="243.0" style="-fx-background-radius: 13;" />
+
+            <!-- Trabajo -->
+            <Label fx:id="label_Trabajo" layoutX="145.0" layoutY="250.0" text="Trabajo:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_Trabajo" layoutX="200.0" layoutY="245.0" prefHeight="25.0" prefWidth="243.0" style="-fx-background-radius: 13;" />
+
+            <!-- Modalidad -->
+            <Label fx:id="label_Modalidad" layoutX="129.0" layoutY="285.0" text="Modalidad:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_Modalidad" layoutX="201.0" layoutY="280.0" prefHeight="25.0" prefWidth="243.0" style="-fx-background-radius: 13;" />
+
+            <!-- Fecha de presentación -->
+            <Label fx:id="label_FechaPresentacion" layoutX="66.0" layoutY="319.0" text="Fecha de presentación:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            
+            <DatePicker fx:id="datePicker_FechaPresentación" editable="false" layoutX="202.0" layoutY="315.0" prefHeight="25.0" prefWidth="243.0" />
+
+
+            <!-- Resultado obtenido -->
+            <Label fx:id="label_Resultado" layoutX="80.0" layoutY="355.0" text="Resultado obtenido:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_Resultado" layoutX="202.0" layoutY="351.0" prefHeight="25.0" prefWidth="243.0" style="-fx-background-radius: 13;" />
+
+            <!-- Periodo -->
+            <Label fx:id="label_Periodo" layoutX="147.0" layoutY="390.0" text="Periodo:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBox_Periodo" layoutX="203.0" layoutY="386.0" prefHeight="25.0" prefWidth="243.0" promptText="Seleccione periodo" />
+
+            <!-- Botones de acción -->
+            <Button fx:id="button_Guardar" onAction="#onGuardar" layoutX="322.0" layoutY="461.0" mnemonicParsing="false" style="-fx-background-color: #a3c8d7;" text="Guardar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="button_Cancelar" onAction="#onCancelar" layoutX="457.0" layoutY="461.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9;" text="Cancelar">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="button_AgregarEstudiante" onAction="#onAgregarEstudiante" layoutX="469.0" layoutY="209.0" mnemonicParsing="false" style="-fx-background-color: #a3c8d7;" text="Agregar">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ComboBox fx:id="comboBox_Rol" layoutX="469.0" layoutY="55.0" prefHeight="25.0" prefWidth="114.0" promptText="Seleccione un rol" />
+            <ComboBox fx:id="comboBox_Licenciatura" layoutX="200.0" layoutY="172.0" prefHeight="25.0" prefWidth="243.0" promptText="Seleccione una licenciatura" />
+         </children>
+      </Pane>
+
+      <!-- Tabla de Profesores -->
+      <TableView fx:id="tableView_Profesores" layoutX="438.0" layoutY="82.0" prefHeight="90.0" prefWidth="297.0">
+         <columns>
+            <TableColumn fx:id="column_Profesor" prefWidth="167.0" text="Profesor" />
+            <TableColumn fx:id="column_Rol" prefWidth="81.5" text="Rol" />
+            <TableColumn fx:id="column_QuitarProfesor" prefWidth="47.5" />
+         </columns>
+      </TableView>
+      <Button fx:id="button_AgregarProfesor" onAction="#onAgregarProfesor" layoutX="579.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #a3c8d7;" text="Agregar">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+
+      <!-- Tabla de Estudiantes -->
+      <TableView fx:id="tableView_Estudiantes" layoutX="438.0" layoutY="255.0" prefHeight="90.0" prefWidth="297.0">
+         <columns>
+            <TableColumn fx:id="column_Estudiante" prefWidth="251.0" text="Estudiante" />
+            <TableColumn fx:id="column_QuitarEstudiante" prefWidth="45.0" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -57,7 +57,7 @@ public class ManejadorBaseDeDatos {
     private Properties obtenerArchivoPropiedades() {
         Properties propiedades = null;
 
-        try (FileInputStream archivoConfiguracion = new FileInputStream(new File("src\\sdgcoilvic\\accesoADatos\\Logger.txt"))) {
+        try (FileInputStream archivoConfiguracion = new FileInputStream(new File("src\\sdgcpp\\accesoADatos\\Logger.txt"))) {
             if (archivoConfiguracion != null) {
                 propiedades = new Properties();
                 propiedades.load(archivoConfiguracion);

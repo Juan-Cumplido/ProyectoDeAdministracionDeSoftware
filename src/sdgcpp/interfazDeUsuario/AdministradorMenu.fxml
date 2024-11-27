@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane_Window" prefHeight="639.0" prefWidth="1159.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcpp.controladores.AdministradorMenuControlador">
+         <children>
+            <ImageView fx:id="imageView_MenuAdministrativo" fitHeight="639.0" fitWidth="1165.0" layoutX="-5.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/fondo-blanco.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageView_Salir" fitHeight="53.0" fitWidth="54.0" layoutX="31.0" layoutY="27.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/salir.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="label_Admin" layoutX="146.0" layoutY="138.0" prefHeight="46.0" prefWidth="222.0" text="Administrador" textAlignment="CENTER" textFill="#fffefe">
+               <font>
+                  <Font name="Ebrima Bold" size="27.0" />
+               </font>
+            </Label>
+      <ImageView fitHeight="53.0" fitWidth="903.0" layoutX="257.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/escudo.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imageView_PlaDEA" fitHeight="162.0" fitWidth="162.0" layoutX="826.0" layoutY="247.0" onMouseClicked="#abrirVentanaPlaDEA" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/image.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="imageView_Proyecto" fitHeight="162.0" fitWidth="162.0" layoutX="168.0" layoutY="247.0" onMouseClicked="#abrirVentanaProyecto" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/image%20(2).png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="imageView_EE" fitHeight="162.0" fitWidth="162.0" layoutX="390.0" layoutY="247.0" onMouseClicked="#abrirVentanaEE" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/image%20(1).png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="imageView_Recepcional" fitHeight="162.0" fitWidth="162.0" layoutX="607.0" layoutY="247.0" onMouseClicked="#abrirVentanaTR" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/image%20(3).png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="854.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imageView_Profesor" fitHeight="162.0" fitWidth="169.0" layoutX="168.0" layoutY="441.0" onMouseClicked="#abrirVentanaProfesor" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/dsxs.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+         </children>
+      </AnchorPane>

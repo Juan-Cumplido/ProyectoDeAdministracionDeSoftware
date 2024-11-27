@@ -14,43 +14,21 @@ import sdgcpp.logicaDeNegocio.interfaces.IAcceso;
 public class AccesoDAO implements IAcceso {
     private static final Logger LOG = Logger.getLogger(AccesoDAO.class);
     private static final String AGREGAR_ACCESO = "{CALL agregarAcceso(?, ?, ?)}";
-    private static final String ACCESO_EXISTENTE = "SELECT COUNT(*) FROM acceso WHERE usuario = ? AND contraseña = SHA2(?, 256)";
-    private static final String OBTENER_ACCESO = "SELECT * FROM acceso WHERE usuario = ? AND contraseña = SHA2(?, 256)";
+    private static final String ACCESO_EXISTENTE = "SELECT COUNT(*) FROM acceso WHERE usuario = ? AND contrasenia = SHA2(?, 256)";
+    private static final String OBTENER_ACCESO = "SELECT * FROM acceso WHERE usuario = ? AND contrasenia = SHA2(?, 256)";
     private static final String OBTENER_IDPROFESOR = """
                                                      SELECT idProfesor
                                                      FROM profesor
-                                                     WHERE idAcceso = (SELECT idAcceso FROM acceso WHERE usuario = ? AND contraseña = SHA2(?, 256));""";
+                                                     WHERE idAcceso = (SELECT idAcceso FROM acceso WHERE usuario = ? AND contrasenia = SHA2(?, 256));""";
     private static final String OBTENER_PROFESOR_POR_ID = "SELECT * FROM profesor WHERE idProfesor = ?;";
-    private static final String ACTUALIZAR_BASEDEDATOS = "{CALL verificarActividadesColaborativas()}";
     private static final String ACTUALIZAR_ACCESO = """
                                                          UPDATE acceso
-                                                         SET usuario = ?, contraseña = SHA2(?, 256)
+                                                         SET usuario = ?, contrasenia = SHA2(?, 256)
                                                          WHERE idAcceso = (
                                                              SELECT idAcceso
                                                              FROM profesor
                                                              WHERE idProfesor = ?);""";
     
-        
-
-    /**
-     * Ejecuta una actualización en la base de datos mediante un procedimiento almacenado.
-     *
-     * @throws SQLException Si ocurre un error al interactuar con la base de datos, por ejemplo:
-     *                      - Cuando no se puede establecer conexión con la base de datos.
-     *                      - Si los parámetros proporcionados son inválidos o nulos.
-     *                      - Si la consulta SQL no se puede ejecutar correctamente.
-     *                      - Si hay un problema al cerrar la conexión con la base de datos.
-     */
-    @Override
-    public void ejecutarActualizacionBaseDatos() throws SQLException {
-        try (Connection conexion = ManejadorBaseDeDatos.obtenerConexion();
-             CallableStatement declaraciónInvocable = (CallableStatement) conexion.prepareCall(ACTUALIZAR_BASEDEDATOS)){
-            declaraciónInvocable.execute();
-            System.out.println("Procedimiento almacenado ejecutado correctamente.");
-        } catch (SQLException ex) {
-            System.err.println("Error al ejecutar el procedimiento almacenado: " + ex.getMessage());
-        } 
-    }
 
     /**
      * Agrega un nuevo acceso a la base de datos.
@@ -223,10 +201,7 @@ public class AccesoDAO implements IAcceso {
         profesor.setApellidoPaterno(resultado.getString("apellidoPaterno"));
         profesor.setApellidoMaterno(resultado.getString("apellidoMaterno"));
         profesor.setCorreo(resultado.getString("correo"));
-        profesor.setIdIdiomas(resultado.getInt("idIdiomas"));
-        profesor.setEstadoProfesor(resultado.getString("estadoProfesor"));
         profesor.setIdAcceso(resultado.getInt("idAcceso"));
-        profesor.setClaveInstitucional(resultado.getString("Institucion_claveInstitucional"));
         return profesor;
     }
 

@@ -5,54 +5,92 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane  fx:id="pane_Window" prefHeight="546.0" prefWidth="533.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcoilvic.controladores.AccesoControlador">
+<AnchorPane fx:id="pane_Window" prefHeight="639.0" prefWidth="1159.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcpp.controladores.AccesoControlador">
     <children>
-        <ImageView fx:id="imageAccesoFondo" fitHeight="553.0" fitWidth="543.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imageAccesoFondo" fitHeight="653.0" fitWidth="1159.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../recursos/AccesoFondo.png" />
+                <Image url="@../recursos/img_Login.png" />
             </image>
         </ImageView>
-        <Label fx:id="label_Bienvenido" layoutX="140.0" layoutY="143.0" text="¡Bienvenido!" textFill="WHITE">
-            <font>
-                <Font size="45.0" />
-            </font>
-        </Label>
-        <TextField fx:id="textField_Usuario" alignment="CENTER" layoutX="139.0" layoutY="263.0" prefHeight="35.0" prefWidth="266.0" style="-fx-background-radius: 13;">
+        <TextField fx:id="textField_Usuario" alignment="CENTER" layoutX="744.0" layoutY="313.0" prefHeight="35.0" prefWidth="314.0" style="-fx-background-color: #e5edf9;">
             <font>
                 <Font size="14.0" />
             </font>
             <cursor>
                 <Cursor fx:constant="TEXT" />
             </cursor>
+         <effect>
+            <DropShadow height="11.66" radius="2.415" width="0.0">
+               <color>
+                  <Color red="0.6823529601097107" green="0.6823529601097107" blue="0.6823529601097107" />
+               </color>
+            </DropShadow>
+         </effect>
         </TextField>
-        <Label fx:id="label_Usuario" layoutX="176.0" layoutY="236.0" text="Introduzca su usuario:" textAlignment="CENTER" textFill="#fffafa">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label fx:id="label_Contrasenia" layoutX="163.0" layoutY="329.0" text="Introduzca su contraseña:" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <PasswordField fx:id="paswordField_Contrasenia" alignment="CENTER" layoutX="138.0" layoutY="356.0" prefHeight="35.0" prefWidth="266.0" style="-fx-background-radius: 13;">
+        <PasswordField fx:id="paswordField_Contrasenia" alignment="CENTER" layoutX="744.0" layoutY="425.0" prefHeight="35.0" prefWidth="314.0" style="-fx-background-color: #e5edf9;">
             <cursor>
                 <Cursor fx:constant="TEXT" />
             </cursor>
+         <effect>
+            <DropShadow height="10.5" radius="2.125" width="0.0">
+               <color>
+                  <Color red="0.6823529601097107" green="0.6823529601097107" blue="0.6823529601097107" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
         </PasswordField>
-        <Button fx:id="button_Acceso" layoutX="224.0" layoutY="411.0" mnemonicParsing="false" onAction="#button_Acceso" prefHeight="26.0" prefWidth="95.0" text="Entrar">
+        <Button fx:id="button_Acceso" layoutX="744.0" layoutY="521.0" mnemonicParsing="false" onAction="#button_Acceso" prefHeight="35.0" prefWidth="314.0" style="-fx-background-color: #2296f2;" text="Iniciar sesión" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="20.0" />
+                <Font name="System Bold" size="18.0" />
             </font>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
         </Button>
+      <Label alignment="CENTER" layoutX="942.0" prefHeight="35.0" prefWidth="217.0" style="-fx-background-color: #1248a1;" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="826.0" layoutY="135.0" prefHeight="68.0" prefWidth="151.0" text="SDGDC" textFill="#122b4e">
+         <font>
+            <Font name="Ebrima" size="46.0" />
+         </font>
+      </Label>
+      <Label layoutX="804.0" layoutY="203.0" prefHeight="54.0" prefWidth="195.0" text="Inicio de sesión" textFill="#6b6f72">
+         <font>
+            <Font name="Calibri" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="869.0" layoutY="362.0" text="Ej: abcgarcia" textFill="#a3a3a3" />
+      <Label fx:id="lbl_FaltaAmbos" layoutX="774.0" layoutY="259.0" text="Falta colocar el usuario y la contraseña" textFill="#c64d07">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_FaltaUsuario" layoutX="825.0" layoutY="259.0" text="Falta colocar el usuario" textFill="#c64d07">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_FaltaContrasenia" layoutX="814.0" layoutY="259.0" text="Falta colocar la contraseña" textFill="#c64d07">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
 
     </children>
 </AnchorPane>

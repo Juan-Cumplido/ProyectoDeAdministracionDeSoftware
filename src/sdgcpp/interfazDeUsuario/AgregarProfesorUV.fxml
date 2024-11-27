@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcpp.controladores.AgregarProfesorControlador">
+            <children>
+      <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/fondo-blanco2.jpg" />
+         </image>
+      </ImageView>
+                <TitledPane fx:id="titledPaneDetalle" animated="false" collapsible="false" prefHeight="15.0" prefWidth="700.0" text="                                                                           Docente" wrapText="true">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font></TitledPane>
+
+                  <Button fx:id="button_Guardar" layoutX="240.0" layoutY="425.0" mnemonicParsing="false" onAction="#guardarRegistro" style="-fx-background-color: #a3c8d7;" text="Guardar">
+                      <cursor>
+                          <Cursor fx:constant="HAND" />
+                      </cursor>
+                      <font>
+                          <Font name="System Bold" size="13.0" />
+                      </font>
+                  </Button>
+                  <Button fx:id="button_Cancelar" layoutX="411.0" layoutY="425.0" mnemonicParsing="false" onAction="#button_Regresar" prefHeight="28.0" prefWidth="98.0" style="-fx-background-color: #d9d9d9;" text="Cancelar">
+                      <cursor>
+                          <Cursor fx:constant="HAND" />
+                      </cursor>
+                      <font>
+                          <Font name="System Bold" size="13.0" />
+                      </font>
+                  </Button>
+                  <ImageView fx:id="imageView_Logo" fitHeight="97.0" fitWidth="129.0" layoutX="571.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../recursos/logo2.jpg" />
+                      </image>
+                  </ImageView>
+      <Pane layoutX="65.0" layoutY="62.0" prefHeight="323.0" prefWidth="491.0">
+         <children>
+            <Label fx:id="label_TipoContratacion" layoutX="71.0" layoutY="232.0" text="Tipo de contratación">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+           
+            <TextField fx:id="textField_Nombre" layoutX="197.0" layoutY="14.0" prefHeight="25.0" prefWidth="278.0" style="-fx-background-radius: 13;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="textField_ApellidoPaterno" layoutX="197.0" layoutY="69.0" prefHeight="25.0" prefWidth="278.0" style="-fx-background-radius: 13;" />
+            <TextField fx:id="textField_ApellidoMaterno" layoutX="199.0" layoutY="123.0" prefHeight="25.0" prefWidth="278.0" style="-fx-background-radius: 13;" />
+            <TextField fx:id="textField_Correo" layoutX="198.0" layoutY="180.0" prefHeight="25.0" prefWidth="278.0" style="-fx-background-radius: 13;" />
+            <ComboBox fx:id="comboBox_TipoContratacion" layoutX="197.0" layoutY="228.0" prefHeight="25.0" prefWidth="278.0" promptText="Seleccione tipo de contratación">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <ComboBox id="c" fx:id="comboBox_CategoriaContratacion" layoutX="198.0" layoutY="281.0" prefHeight="25.0" prefWidth="278.0" promptText="Seleccione categoría de contratación">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Label fx:id="label_Correo" alignment="CENTER" layoutX="149.0" layoutY="185.0" style="&#10;" text="Correo" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_ApellidoPaterno" alignment="CENTER" layoutX="87.0" layoutY="128.0" style="&#10;" text="Segundo apellido" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_ApellidoMaterno" alignment="CENTER" layoutX="99.0" layoutY="74.0" style="&#10;" text="Primer apellido" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_Nombre" alignment="CENTER" layoutX="142.0" layoutY="19.0" style="&#10;" text="Nombre" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_CategoriaContratacion" layoutX="43.0" layoutY="285.0" text="Categoría de contratación">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+            </children>
+        </AnchorPane>
