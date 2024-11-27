@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane_Window" prefHeight="639.0" prefWidth="1159.0" style="-fx-background-color: #D9D9D9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sdgcpp.controladores.ProfesorMenuControlador">
+    <children>
+            <ImageView fx:id="imageView_MenuAdministrativo" fitHeight="639.0" fitWidth="1165.0" layoutX="-5.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/fondo-blanco.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageView_Salir" fitHeight="53.0" fitWidth="54.0" layoutX="31.0" layoutY="27.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/salir.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="label_Nombre" layoutX="162.0" layoutY="74.0" prefHeight="46.0" prefWidth="488.0" text="" textAlignment="CENTER" textFill="#fffefe">
+               <font>
+                  <Font name="Ebrima Bold" size="27.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="53.0" fitWidth="903.0" layoutX="257.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                   <Image url="@../recursos/escudo.png" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="132.0" fitWidth="189.0" layoutX="948.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                 <Image url="@../recursos/logo.png" />
+              </image>
+            </ImageView>
+      <Pane layoutX="78.0" layoutY="120.0" prefHeight="481.0" prefWidth="1010.0">
+         <children>
+            
+            <Label alignment="CENTER" layoutX="68.0" layoutY="61.0" prefHeight="19.0" prefWidth="142.0" style="&#10;" text="Tipo de constancia" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+               <font>
+                  <Font name="Ebrima Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBox_Constancia" layoutX="228.0" layoutY="58.0" prefHeight="25.0" prefWidth="243.0" promptText="Seleccione el tipo constancia" />
+            
+             <Label layoutX="522.0" layoutY="61.0" text="Periodo" textFill="WHITE">
+               <font>
+                  <Font name="Ebrima Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBox_Periodo" layoutX="587.0" layoutY="58.0" prefHeight="25.0" prefWidth="243.0" promptText="Seleccione el periodo" />
+            <Button fx:id="button_Buscar" layoutX="858.0" layoutY="56.0" mnemonicParsing="false" onAction="#button_Buscar" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: #a3c8d7;" text="Buscar">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="button_GenerarConstancia" layoutX="373.0" layoutY="422.0" mnemonicParsing="false" onAction="#button_GenerarConstancia" prefHeight="32.0" prefWidth="298.0" style="-fx-background-color: #a3c8d7;" text="Generar Constancia">
+               <font>
+                  <Font name="Ebrima Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            
+            <TableView fx:id="tableView_PlaDEA" editable="true" layoutX="68.0" layoutY="106.0" prefHeight="245.0" prefWidth="877.0">
+               <columns>
+                  <TableColumn fx:id="column_Eje" prefWidth="123.0" text="Eje estratégico" />
+                  <TableColumn fx:id="column_ProgramaEstrategico" minWidth="0.0" prefWidth="127.5" text="Programa estratégico" />
+                  <TableColumn fx:id="column_Objetivos" minWidth="0.0" prefWidth="229.0" text="Objetivos generales" />
+                  <TableColumn fx:id="column_Acciones" prefWidth="193.0" text="Acciones" />
+                  <TableColumn fx:id="column_Metas" prefWidth="203.5" text="Metas" />
+               </columns>
+            </TableView>
+
+            <TableView fx:id="tableView_EE" editable="true" layoutX="68.0" layoutY="106.0" prefHeight="245.0" prefWidth="877.0">
+               <columns>
+                  <TableColumn fx:id="column_ProgramaEducativo" prefWidth="201.5" text="Programa educativo" />
+                  <TableColumn fx:id="column_Experiencia" minWidth="0.0" prefWidth="192.5" text="Experiencia educativa" />
+                  <TableColumn fx:id="column_Bloque" minWidth="0.0" prefWidth="84.0" text="Bloque" />
+                  <TableColumn fx:id="column_Seccion" prefWidth="83.5" text="Sección" />
+                  <TableColumn fx:id="column_Credito" prefWidth="84.5" text="Crédito" />
+                  <TableColumn fx:id="column_H" prefWidth="77.0" text="H" />
+                  <TableColumn fx:id="column_S" prefWidth="73.5" text="S" />
+                  <TableColumn fx:id="column_M" prefWidth="79.5" text="M" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tableView_ProyectoCampo" editable="true" layoutX="68.0" layoutY="106.0" prefHeight="245.0" prefWidth="877.0">
+               <columns>
+                  <TableColumn fx:id="column_Proyecto" prefWidth="166.0" text="Proyecto realizado" />
+                  <TableColumn fx:id="column_FechaInicio" minWidth="0.0" prefWidth="104.5" text="Fecha de incio" />
+                  <TableColumn fx:id="column_FechaFin" minWidth="0.0" prefWidth="106.0" text="Feche de fin" />
+                  <TableColumn fx:id="column_Lugar" prefWidth="166.5" text="Lugar donde se desarrolló" />
+                  <TableColumn fx:id="column_Impacto" prefWidth="145.5" text="Impacto obtenido" />
+                  <TableColumn fx:id="column_Alumnos" prefWidth="187.5" text="Alumnos involucrados" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tableView_TrabajoRecepcional" editable="true" layoutX="68.0" layoutY="106.0" prefHeight="245.0" prefWidth="877.0">
+               <columns>
+                  <TableColumn fx:id="column_Rol" prefWidth="85.0" text="Rol" />
+                  <TableColumn fx:id="column_AlumnosTR" prefWidth="182.0" text="Alumnos" />
+                  <TableColumn fx:id="column_Titulo" minWidth="0.0" prefWidth="153.5" text="Título del trabajo" />
+                  <TableColumn fx:id="column_Modalidad" minWidth="0.0" prefWidth="112.0" text="Modalidad" />
+                  <TableColumn fx:id="column_Fecha" prefWidth="130.0" text="Fecha de presentación" />
+                  <TableColumn fx:id="column_Licenciatura" prefWidth="136.0" text="Licenciatura" />
+                  <TableColumn fx:id="column_Defensa" prefWidth="77.5" text="Defensa" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+         </children>
+</AnchorPane>

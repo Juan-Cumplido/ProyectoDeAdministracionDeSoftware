@@ -17,7 +17,7 @@ public class EnviosDeCorreoElectronico {
     private static Properties leerCredenciales() {
         Properties propiedadesCorreo = new Properties();
         try{
-           DataInputStream archivoCorreo = new DataInputStream(new FileInputStream("src\\sdgcoilvic\\utilidades\\credenciales.txt"));
+           DataInputStream archivoCorreo = new DataInputStream(new FileInputStream("src\\sdgcpp\\utilidades\\credenciales.txt"));
            propiedadesCorreo.load(archivoCorreo);
         }catch(FileNotFoundException archivoNoEncontrado){
             LOG.fatal(archivoNoEncontrado.getMessage());

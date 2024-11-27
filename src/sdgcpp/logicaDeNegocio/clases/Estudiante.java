@@ -7,12 +7,14 @@ public class Estudiante {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private String correo;
-    private String claveInstitucional;
+    private int trabajoRecepcional;
+    private String matricula;
 
     private final static String EXPRESION_REGULAR = "^[\\p{L}áéíóúÁÉÍÓÚüÜ\\s'\\-]{1,60}$";
     private final static String EXPRESION_REGULAR_APELLIDO_MATERNO = "^[\\p{L}áéíóúÁÉÍÓÚüÜ\\s'\\-]{0,60}$";
-    private final static String EXPRESION_REGULAR_CORREO_ELECTRONICO = "^[a-zA-Z0-9'._%+-]{1,64}@[a-zA-Z.-]{2,255}\\.[a-zA-Z]{2,}$";
+     public String getNombreCompleto() {
+        return nombre + " " + apellidoPaterno + " " + apellidoMaterno;
+    }
     
     public int getIdEstudiante() {
         return idEstudiante;
@@ -33,6 +35,15 @@ public class Estudiante {
             throw new IllegalArgumentException();
         } 
     }
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+        
+    }
 
     public String getApellidoPaterno() {
         return apellidoPaterno;
@@ -51,36 +62,22 @@ public class Estudiante {
     }
 
     public void setApellidoMaterno(String apellidoMaterno) {
-        if (apellidoMaterno == null || Pattern.matches(EXPRESION_REGULAR_APELLIDO_MATERNO, apellidoMaterno.trim())) {
-            this.apellidoMaterno = apellidoMaterno.trim().replaceAll("\\s+", " ");
-        }else{
-            throw new IllegalArgumentException();
-        }
+       this.apellidoMaterno = apellidoMaterno;
+       
     }
 
-    public String getCorreo() {
-        return correo;
+    public int getTrabajoRecepcional() {
+        return trabajoRecepcional;
     }
 
-    public void setCorreo(String correo) {
-        if (correo!=null&&Pattern.matches(EXPRESION_REGULAR_CORREO_ELECTRONICO, correo.trim())) {
-            this.correo = correo.trim().replaceAll("\\s+", " ");
-        }else{
-            throw new IllegalArgumentException();
-        }
-    }
-
-    public String getClaveInstitucional() {
-        return claveInstitucional;
-    }
-
-    public void setClaveInstitucional(String claveInstitucional) {
-        this.claveInstitucional = claveInstitucional;
+    public void setTrabajoRecepcional(int trabajoRecepcional) {
+       this.trabajoRecepcional = trabajoRecepcional;
+        
     }
     
         @Override
     public String toString() {
-        return nombre + " " + apellidoPaterno + " " + apellidoMaterno + " " + correo;
+        return nombre + " " + apellidoPaterno + " " + apellidoMaterno + " " + trabajoRecepcional;
     }
     
     @Override
@@ -91,9 +88,7 @@ public class Estudiante {
         final Estudiante otroEstudiante = (Estudiante) object;
         return (this.nombre == null ? otroEstudiante.nombre == null : this.nombre.equals(otroEstudiante.nombre))
             && (this.apellidoPaterno == null ? otroEstudiante.apellidoPaterno == null : this.apellidoPaterno.equals(otroEstudiante.apellidoPaterno))   
-            && (this.apellidoMaterno == null ? otroEstudiante.apellidoMaterno == null : this.apellidoMaterno.equals(otroEstudiante.apellidoMaterno))  
-            && (this.correo == null ? otroEstudiante.correo == null : this.correo.equals(otroEstudiante.correo))
-            && (this.claveInstitucional == null ? otroEstudiante.claveInstitucional == null : this.claveInstitucional.equals(otroEstudiante.claveInstitucional));
+            && (this.apellidoMaterno == null ? otroEstudiante.apellidoMaterno == null : this.apellidoMaterno.equals(otroEstudiante.apellidoMaterno));
             
     }
 }

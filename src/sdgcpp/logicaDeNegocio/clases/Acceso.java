@@ -24,11 +24,8 @@ public class Acceso {
     }
 
     public void setContrasenia(String contrasenia) {
-        if(contrasenia!=null&&Pattern.matches(EXPRESION_REGULAR_CONTRASENIA, contrasenia)){
-            this.contrasenia = contrasenia;
-        }else{
-            throw new IllegalArgumentException();
-        }
+       this.contrasenia = contrasenia;
+        
     }
 
     public String getUsuario() {
@@ -36,11 +33,8 @@ public class Acceso {
     }
 
     public void setUsuario(String usuario) {
-        if(Pattern.matches(EXPRESION_REGULAR_USUARIO, String.valueOf(usuario))){
-            this.usuario = usuario;
-        }else{
-            throw new IllegalArgumentException();
-        }
+        this.usuario = usuario;
+        
     }
 
     public String getTipoUsuario() {

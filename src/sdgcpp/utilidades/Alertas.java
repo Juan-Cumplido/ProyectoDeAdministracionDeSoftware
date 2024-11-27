@@ -14,7 +14,13 @@ public class Alertas {
     public static void mostrarMensaje(AlertType tipoAlerta, String titulo, String contenido) {
         mostrarAlerta(tipoAlerta, titulo, contenido);
     }
-    
+    public static void mostrarMensaje(String titulo, String mensaje) {
+    Alert alert = new Alert(AlertType.INFORMATION);
+    alert.setTitle(titulo);
+    alert.setHeaderText(null);
+    alert.setContentText(mensaje);
+    alert.showAndWait();
+}
     public static boolean mostrarMensajeArchivoExistente() {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Confirmación");
@@ -41,8 +47,20 @@ public class Alertas {
     }
     
     
-    public static void mostrarMensajeNoHayColaboracionEnCurso() {
-            mostrarAlerta(AlertType.INFORMATION, "AVISO", "Aun no tiene ninguna Colaboración en curso");
+    public static void mostrarMensajeNoHayEE() {
+            mostrarAlerta(AlertType.INFORMATION, "AVISO", "Aun no tiene ninguna EE registrada");
+    }
+    
+        public static void mostrarMensajeNoHayTR() {
+            mostrarAlerta(AlertType.INFORMATION, "AVISO", "Aun no tiene ningun Trabajo recepcional registrado");
+    }
+        
+        public static void mostrarMensajeNoHayPLADEA() {
+            mostrarAlerta(AlertType.INFORMATION, "AVISO", "Aun no tiene ninguna PlaDEA registrada");
+    }
+      
+        public static void mostrarMensajeNoHayPROYECTO() {
+            mostrarAlerta(AlertType.INFORMATION, "AVISO", "Aun no tiene ningun Proyecto de campo registrado");
     }
     
     public static void mostrarMensajeColaboracionEnCurso() {
@@ -66,7 +84,7 @@ public class Alertas {
     }
     
     public static void mostrarMensajeProfesorNoSeleccionado() {
-        mostrarAlerta(AlertType.INFORMATION, "AVISO", "Debe seleccionar un Profesor");
+        mostrarAlerta(AlertType.INFORMATION, "AVISO", "Debe seleccionar un registro");
     }
     
     public static void mostrarMensajeColaboracionNoSeleccionado() {
@@ -127,6 +145,10 @@ public class Alertas {
     }
     public static void mostrarMensajeSinResultados() {
         mostrarAlerta(AlertType.ERROR, "Sin resultados", "No se hallaron resultados");
+    }
+    
+    public static void mostrarMensajeAlumnoYaREgistrado() {
+        mostrarAlerta(AlertType.ERROR, "AVISO", "EL ESTUDIANTE YA TIENE UN TRABAJO RECEPCIONAL");
     }
     
     public static void mostrarMensajeCarpetaNoSeleccionada() {

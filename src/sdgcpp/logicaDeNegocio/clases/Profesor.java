@@ -3,24 +3,30 @@ package sdgcpp.logicaDeNegocio.clases;
 import java.util.regex.Pattern;
 
 
-public class Profesor {
+public class Profesor{
     
     private int idProfesor;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String correo;
-    private int idIdiomas;
     private int idAcceso;
-    private String estadoProfesor;
-    private String claveInstitucional;
+    private int idCategoriaContratacionUV;
+    private int idTipoContratacionUV;
+    private String rol;
+
+    
 
     private final static String EXPRESION_REGULAR = "^[\\p{L}áéíóúÁÉÍÓÚüÜ\\s'\\-]{1,60}$";
     private final static String EXPRESION_REGULAR_APELLIDO_MATERNO = "^[\\p{L}áéíóúÁÉÍÓÚüÜ\\s'\\-]{0,60}$";
     private final static String EXPRESION_REGULAR_CORREO_ELECTRONICO = "^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+     public String getNombreCompleto() {
+        return nombre + " " + apellidoPaterno + " " + apellidoMaterno;
+    }
     
     public Profesor() {
     }
+    
     public int getIdProfesor() {
         return idProfesor;
     }
@@ -79,14 +85,6 @@ public class Profesor {
             throw new IllegalArgumentException();
         }
     }
-
-    public int getIdIdiomas() {
-        return idIdiomas;
-    }
-
-    public void setIdIdiomas(int idIdiomas) {
-        this.idIdiomas = idIdiomas;
-    }
     
     public int getIdAcceso() {
         return idAcceso;
@@ -96,20 +94,28 @@ public class Profesor {
         this.idAcceso = idAcceso;
     }
     
-    public String getEstadoProfesor() {
-        return estadoProfesor;
+    public int getIdCategoriaContratacionUV() {
+        return idCategoriaContratacionUV;
     }
 
-    public void setEstadoProfesor(String estadoProfesor) {
-        this.estadoProfesor = estadoProfesor;
+    public void setIdCategoriaContratacionUV(int idCategoriaContratacionUV) {
+        this.idCategoriaContratacionUV = idCategoriaContratacionUV;
     }
 
-    public String getClaveInstitucional() {
-        return claveInstitucional;
+    public int getIdTipoContratacionUV() {
+        return idTipoContratacionUV;
     }
 
-    public void setClaveInstitucional(String claveInstitucional) {
-        this.claveInstitucional = claveInstitucional;
+    public void setIdTipoContratacionUV(int idTipoContratacionUV) {
+        this.idTipoContratacionUV = idTipoContratacionUV;
+    }
+    
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
     
     @Override
@@ -127,11 +133,8 @@ public class Profesor {
             && (this.apellidoPaterno == null ? otroProfesor.apellidoPaterno == null : this.apellidoPaterno.equals(otroProfesor.apellidoPaterno))   
             && (this.apellidoMaterno == null ? otroProfesor.apellidoMaterno == null : this.apellidoMaterno.equals(otroProfesor.apellidoMaterno))  
             && (this.correo == null ? otroProfesor.correo == null : this.correo.equals(otroProfesor.correo))
-            && this.idIdiomas == otroProfesor.idIdiomas
-            && (this.estadoProfesor == null ? otroProfesor.estadoProfesor == null : this.estadoProfesor.equals(otroProfesor.estadoProfesor)) 
-            && this.idAcceso == otroProfesor.idAcceso
-            && (this.claveInstitucional == null ? otroProfesor.claveInstitucional == null : this.claveInstitucional.equals(otroProfesor.claveInstitucional));
-            
+           && this.idCategoriaContratacionUV == otroProfesor.idCategoriaContratacionUV
+            && this.idTipoContratacionUV == otroProfesor.idTipoContratacionUV;
     }
 
 }
